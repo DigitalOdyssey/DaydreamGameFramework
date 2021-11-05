@@ -1,5 +1,6 @@
 #include "daydream.h"
 
+/*
 DDtexture* texture;
 DDshader* shader; 
 DDsprite* sprite;
@@ -36,8 +37,40 @@ dd_app_t DD_main(int32_t argc, char** argv)
         w_fullscreen = false,
         w_framerate = 60.f,
 
-        a_init = init,
-        a_update = update,
-        a_shutdown = shutdown,
+        init = init,
+        update = update,
+        shutdown = shutdown,
+    };
+}
+*/
+
+void init()
+{
+    printf("init\n");
+}
+
+void update()
+{
+    printf("update\n");
+    DD_engine_quit();
+}
+
+void shutdown()
+{
+    printf("shutdown\n");
+}
+
+DDapp DD_main(int32_t argc, char** argv)
+{
+    return (DDapp)
+    {
+        .w_width = 800,
+        .w_height = 800,
+        .w_title = "Program",
+        .w_framerate = 60.f,
+
+        .init = init,
+        .update = update,
+        .shutdown = shutdown,
     };
 }
