@@ -39,7 +39,7 @@ extern DDapp DD_main(int32_t argc, char** argv);
 #else
     typedef struct
     {
-        //GLFWwindow* window;
+        GLFWwindow* window;
         bool is_running;
         uint32_t w_width;
         uint32_t w_height;
@@ -62,5 +62,8 @@ extern bool DD_engine_is_running();
 extern void DD_engine_frame();
 extern void DD_engine_destroy();
 extern void DD_engine_quit();
+
+/* graphics */
+extern void DD_clear(float r, float g, float b, float a);
 
 #endif

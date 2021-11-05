@@ -51,8 +51,8 @@ void init()
 
 void update()
 {
+    DD_clear(255, 30, 0, 1);
     printf("update\n");
-    DD_engine_quit();
 }
 
 void shutdown()
