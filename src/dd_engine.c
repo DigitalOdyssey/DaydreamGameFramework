@@ -5,23 +5,6 @@ DDengine* DD_engine_instance()
     return _engine_inst;
 }
 
-GLFWwindow* DD_engine_window_create(DDapp app_info)
-{
-    if(!glfwInit())
-        return NULL;
-
-    GLFWwindow* window = glfwCreateWindow(app_info.w_width, app_info.w_height, app_info.w_title, NULL, NULL);
-    if(!window)
-    {
-        glfwTerminate();
-        return NULL;
-    }
-
-    glfwMakeContextCurrent(window);
-
-    return window;
-}
-
 DDengine* DD_engine_create(DDapp app_info)
 {
     if(DD_engine_instance() != NULL)
@@ -60,6 +43,8 @@ bool DD_engine_is_running()
 
 void DD_engine_frame()
 {
+    glClear(GL_COLOR_BUFFER_BIT);
+
     DD_engine_instance()->update();
 
     glfwSwapBuffers(DD_engine_instance()->window);
@@ -80,10 +65,4 @@ void DD_engine_quit()
     DD_engine_instance()->shutdown();
     DD_engine_instance()->is_running = false;
     DD_engine_destroy();
-}
-
-void DD_clear(float r, float g, float b, float a)
-{
-    glClearColor(r, g, b, a);
-    glClear(GL_COLOR_BUFFER_BIT);
 }

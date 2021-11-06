@@ -47,11 +47,11 @@ dd_app_t DD_main(int32_t argc, char** argv)
 void init()
 {
     printf("init\n");
+    DD_clear_color(0.5f, 1.f, 0.8f, 1.f);
 }
 
 void update()
 {
-    DD_clear(255, 30, 0, 1);
     printf("update\n");
 }
 

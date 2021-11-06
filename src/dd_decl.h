@@ -56,14 +56,27 @@ extern DDapp DD_main(int32_t argc, char** argv);
 static DDengine* _engine_inst = NULL;
 #endif
 extern DDengine* DD_engine_instance();
-extern DDapp* DD_engine_app_info();
 extern DDengine* DD_engine_create(DDapp app_info);
 extern bool DD_engine_is_running();
 extern void DD_engine_frame();
 extern void DD_engine_destroy();
 extern void DD_engine_quit();
 
+/* window */ // TODO
+extern int32_t DD_get_width(); // Gets the width of the window
+extern int32_t DD_get_height(); // Gets the height of the window
+extern char* DD_get_title(); // Gets the title of the window
+extern void DD_set_width(); // Sets the width of the window
+extern void DD_set_height(); // Sets the height of the window
+extern void DD_set_title(); // Sets the title of the window
+
+// TODO: input
+
 /* graphics */
-extern void DD_clear(float r, float g, float b, float a);
+// TODO: enable/disable auto clearing
+#ifndef DAYDREAM_H
+GLFWwindow* DD_window_create(DDapp app_info);
+#endif
+extern void DD_clear_color(float r, float g, float b, float a); // Sets the clear color of the window
 
 #endif
