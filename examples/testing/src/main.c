@@ -53,6 +53,7 @@ void init()
 void update()
 {
     printf("update\n");
+    DD_clear_color((float)rand()/RAND_MAX, (float)rand()/RAND_MAX, (float)rand()/RAND_MAX, 1.f);
 }
 
 void shutdown()

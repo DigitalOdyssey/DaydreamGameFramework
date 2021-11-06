@@ -13,7 +13,7 @@ DDengine* DD_engine_create(DDapp app_info)
     DDengine* engine = malloc(sizeof(DDengine));
     memset(engine, 0, sizeof(DDengine));
 
-    engine->window = DD_engine_window_create(app_info);
+    engine->window = DD_window_create(app_info);
     if(engine->window == NULL)
     {
         free(engine);
